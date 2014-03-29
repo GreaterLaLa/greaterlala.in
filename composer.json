@@ -1,0 +1,22 @@
+{
+    "require": {
+        "slim/slim": "2.*",
+        "slim/views": "0.1.*",
+        "twig/twig": "1.15.0",
+        "monolog/monolog": "1.7.0",
+        "resty/resty": "0.6.0",
+        "vlucas/valitron": "dev-master#e011ab81c43903e73b766620828877b828e65380",
+        "j4mie/idiorm": "v1.4.1",
+        "j4mie/paris": "v1.4.2",
+        "robmorgan/phinx": "v0.3.3"
+    },
+
+    "require-dev": {
+        "funkatron/funit": "dev-master",
+        "fzaninotto/faker": "v1.3.0"
+    },
+
+    "autoload": {
+        "psr-4": {"GLLApp\\": "./app/"}
+    }
+}
