@@ -28,6 +28,18 @@ $app->container->singleton('log', function () use ($app) {
 });
 
 /**
+ * set up DB settings for idiorm/paris
+ */
+\ORM::configure("mysql:host=" . $app->config('mysql_host') .
+                ";dbname=" . $app->config('mysql_dbname'));
+\ORM::configure("username", $app->config('mysql_username'));
+\ORM::configure("password", $app->config('mysql_password'));
+\ORM::configure("logging", $app->config('debug'));
+\ORM::configure("logger", function ($log_str) use ($app) {
+    $app->log->addDebug($log_str);
+});
+
+/**
  * set Twig parser options
  */
 $view = $app->view();
