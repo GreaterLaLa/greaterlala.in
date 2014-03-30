@@ -2,3 +2,4 @@
 
 .DS_Store
 app/settings/base.php
+app/phinx.yml
