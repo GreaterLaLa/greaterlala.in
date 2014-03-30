@@ -1,5 +1,7 @@
 <?php
 
+namespace GLLApp\settings;
+
 use Monolog\Logger;
 
 include "{$BASE_PATH}/app/settings/base.php";
@@ -19,3 +21,6 @@ $APP_SETTINGS = array_merge($BASE_APP_SETTINGS, [
 
     "monolog.level" => Logger::DEBUG,
 ]);
+
+// assigns these settings to the Fetcher class
+Fetcher::$SETTINGS = $APP_SETTINGS;

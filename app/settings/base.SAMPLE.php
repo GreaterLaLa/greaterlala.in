@@ -1,6 +1,16 @@
 <?php
 
+namespace FKAPIApp\settings;
+
 use Monolog\Logger;
+
+/**
+ * this exists so we can autoload a settings file
+ */
+class Fetcher
+{
+    public static $SETTINGS = array();
+}
 
 // $BASE_PATH is set in htdocs/index.php
 
