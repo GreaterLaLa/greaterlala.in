@@ -1,6 +1,6 @@
 <?php
 
-namespace FKAPIApp\settings;
+namespace GLLApp\settings;
 
 use Monolog\Logger;
 
