@@ -10,7 +10,7 @@ class AddTypeData extends AbstractMigration
      */
     public function up()
     {
-        $this->execute("INSERT INTO suggestions_types (type) VALUES ('text');");
+        $this->execute("INSERT INTO suggestions_types (id, type) VALUES (1, 'text');");
     }
 
     /**
