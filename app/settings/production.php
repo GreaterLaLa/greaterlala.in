@@ -2,6 +2,7 @@
 
 namespace GLLApp\settings;
 
+// $BASE_PATH is set in htdocs/index.php
 include "{$BASE_PATH}/app/settings/base.php";
 
 $APP_SETTINGS = array_merge($BASE_APP_SETTINGS, [
