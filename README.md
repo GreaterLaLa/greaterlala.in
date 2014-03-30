@@ -15,4 +15,4 @@ greaterlala.in
 ## Installation
 ...
 
-Use `composer update --no-dev` to install packages without dev stuff
+Use `composer update` in the base project directory to install packages without dev stuff
