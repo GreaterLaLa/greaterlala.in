@@ -19,7 +19,7 @@ $app = new \GLLApp\Lib\App($APP_SETTINGS);
  * set-up monolog in app singleton container
  */
 $app->container->singleton('log', function () use ($app) {
-    $log = new Logger('FKAPIApp');
+    $log = new Logger('GLLApp');
     $log->pushHandler(new ErrorLogHandler(
         ErrorLogHandler::OPERATING_SYSTEM,
         $app->config('monolog.level')
@@ -47,7 +47,7 @@ $view->parserExtensions = array(
  * Add JSON auto-decode middleware. This decodes the request body if
  * content-type is application/json and assigns it to $app->request->json
  */
-$app->add(new \FKAPIApp\Middleware\DecodeJson());
+$app->add(new \GLLApp\Middleware\DecodeJson());
 
 /**
  * add encrypted cookie session middleware
