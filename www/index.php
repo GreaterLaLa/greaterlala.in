@@ -1,5 +1,5 @@
 <?php
-$BASE_PATH = realpath(dirname(__FILE__) . '/..');
+$BASE_PATH = dirname(__FILE__) . '/..';
 
 /**
  * We use the composer autoloader for everything
