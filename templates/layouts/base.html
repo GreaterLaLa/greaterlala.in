@@ -18,6 +18,8 @@
         <script src="/js/vendor/modernizr.js"></script>
 
         {% block header_extra %}{% endblock %}
+
+        <meta name="{{ csrf_key }}" content="{{ csrf_token }}"/>
     </head>
     <body>
         {% block body %}
