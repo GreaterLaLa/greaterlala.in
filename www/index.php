@@ -62,6 +62,12 @@ $view->parserExtensions = array(
 $app->add(new \GLLApp\Middleware\DecodeJson());
 
 /**
+ * Add CSRF checking middleware. This will require that you send a CSRF token
+ * with all 'POST', 'PUT', 'PATCH' requests
+ */
+$app->add(new \GLLApp\Middleware\Csrf());
+
+/**
  * add encrypted cookie session middleware
  * Note that the SessionCookie MW is added LAST so it loads BEFORE any
  * middleware that interacts with the session!
