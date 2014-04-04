@@ -31,8 +31,8 @@ $app->group('/api', function () use ($app) {
          * create a new suggestion
          *
          * There is no authorization on this. anyone can hit this and add stuff
-         * to the DB with a simple POST call. maybe at least a CSRF check
-         * is in order here
+         * to the DB with a simple POST call. It does do a CSRF check but you
+         * could work around that if you're determined.
          */
         $app->post('/', function () use ($app, $sugg_m) {
             $sugg_text = $app->request->post('suggestion');

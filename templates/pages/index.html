@@ -39,6 +39,8 @@
 <script>
     $(document).ready(function() {
 
+        var csrf_token = $('meta[name="_csrf_token"]').attr('content');
+
         $('#suggestion-form').submit(function(e) {
 
             $form = $('#suggestion-text');
@@ -58,7 +60,7 @@
                 var xhr = $.ajax({
                     'url': '/api/suggestions',
                     'type': 'POST',
-                    'data': { 'suggestion': content }
+                    'data': { 'suggestion': content, '_csrf_token': csrf_token }
                 });
 
                 console.log('3. profit?');
