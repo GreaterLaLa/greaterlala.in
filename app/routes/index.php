@@ -1,8 +1,5 @@
 <?php
-use \GLLApp\Lib\GeocodioApi;
-use \GLLApp\Lib\GovtrackApi;
-use \GLLApp\Lib\Cache;
-
+use \Model as ParisModel;
 
 $app->error(function (\Exception $e) use ($app) {
     $app->log->addError("Exception thrown: " . $e->getMessage());
@@ -10,6 +7,13 @@ $app->error(function (\Exception $e) use ($app) {
 });
 
 $app->get('/', function () use ($app) {
-    $app->render('pages/index.html');
+    $sugg = ParisModel::factory('\GLLApp\Model\Suggestion');
+    $suggestions = $sugg
+                        ->limit(10)
+                        ->order_by_desc('created_at')
+                        ->find_many();
+    // the first shall be last
+    $suggestions = array_reverse($suggestions);
+    $app->render('pages/index.html', ['suggestions' => $suggestions]);
 });
 

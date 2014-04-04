@@ -8,4 +8,75 @@
             <h1>Hi!</h1>
         </div>
     </div>
+    <div class="row">
+        <div class="small-12 medium-6 large-6 columns">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+        </div>
+        <div class="small-12 medium-6 large-6 columns">
+            <ul id="suggestion-history">
+            {% for suggestion in suggestions %}
+                <li data-id="{{suggestion.id}}">{{suggestion.content}}</li>
+            {% endfor %}
+            </ul>
+            <form id="suggestion-form">
+            <div class="row collapse">
+                <div class="small-10 columns">
+                    <input type="text" id="suggestion-text" name="suggestion"
+                    placeholder="What's your idea?" required>
+                </div>
+                <div class="small-2 columns">
+                    <input type="submit" value="Add" class="button postfix">
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block footer_extra %}
+<script>
+    $(document).ready(function() {
+
+        $('#suggestion-form').submit(function(e) {
+
+            $form = $('#suggestion-text');
+
+            console.log('1. add item to history');
+            var content = $.trim($form.val());
+            if (content) { // don't do anything if content is falsy
+                $ul = $('#suggestion-history');
+
+                // remove first item
+                $ul.children('li').first().remove();
+
+                // append to end
+                $ul.append('<li data-id="submitted">'+content+'</li>');
+
+                console.log('2. submit to api (authentication?)');
+                var xhr = $.ajax({
+                    'url': '/api/suggestions',
+                    'type': 'POST',
+                    'data': { 'suggestion': content }
+                });
+
+                console.log('3. profit?');
+                xhr.always(function(data, textStatus, xhr) {
+                    // we could do something with this response, but maybe
+                    // not necessary
+                    console.log(xhr.responseStatus, xhr.responseText);
+                });
+            }
+
+            // clear the form field
+            $form.val('');
+
+            // don't actually submit the form!
+            return false;
+        });
+
+    });
+</script>
+
 {% endblock %}
