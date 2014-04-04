@@ -10,7 +10,7 @@ $APP_SETTINGS = array_merge($BASE_APP_SETTINGS, [
     "debug" => false,
     "log.enabled" => false,
     "cookies.encrypt" => true,
-    "cookies.secure" => true,
+    "cookies.secure" => false, // cookies only over HTTPS if this is true
     "cookies.httponly" => true,
     "twig.debug" => false,
 ]);
