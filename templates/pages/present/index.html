@@ -1,7 +1,8 @@
 {% extends "layouts/base.html" %}
 
-{% block title %}: {{region_description}}{% endblock %}
+{% block title %}: Present {% endblock %}
 
+{% block body_tag_attr %}class="present"{% endblock %}
 
 {% from "macros/helpers.html" import present_block %}
 

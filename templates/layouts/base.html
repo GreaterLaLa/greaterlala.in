@@ -21,7 +21,7 @@
 
         <meta name="{{ csrf_key }}" content="{{ csrf_token }}"/>
     </head>
-    <body>
+    <body {% block body_tag_attr %}{% endblock %} >
         {% block body %}
 
         {% endblock %}

@@ -1,4 +1,4 @@
-body {
+body.present {
     /* this turns off scrolling, ensuring the scroll bars don't ever show */
     overflow: hidden;
 }
