@@ -1,0 +1,7 @@
+{% macro present_block(sugg, index) %}
+<div class="row present-row" id="present-row-{{index}}">
+    <div class="small-12 columns">
+        <div class="present-block" id="present-block-{{index}}">{{sugg.content}}</div>
+    </div>
+</div>
+{% endmacro %}
