@@ -89,5 +89,6 @@ $app->add(new \Slim\Middleware\SessionCookie([
  */
 include "{$BASE_PATH}/app/routes/index.php";
 include "{$BASE_PATH}/app/routes/api.php";
+include "{$BASE_PATH}/app/routes/present.php";
 
 $app->run();
