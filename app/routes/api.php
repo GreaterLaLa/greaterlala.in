@@ -16,6 +16,25 @@ $app->group('/api', function () use ($app) {
          * get suggestions
          */
         $app->get('/', function () use ($app, $sugg_m) {
+            // get limit
+            if ($limit = (int)$app->request->get('limit')) {
+                $sugg_m->limit($limit);
+            }
+
+            // get skip
+            if ($skip = (int)$app->request->get('skip')) {
+                $sugg_m->offset($skip);
+            }
+
+            // ?random=1
+            $app->log->addDebug('GET', $app->request->get());
+            if ($app->request->get('random') == '1') {
+                $app->log->addDebug('GETTING RANDOM');
+                $sugg_m->order_by_expr('RAND() DESC');
+            } else {
+                $sugg_m->order_by_desc('created_at');
+            }
+
             $suggestions = $sugg_m->find_many();
             $resp_json = [];
             foreach ($suggestions as $suggestion) {
