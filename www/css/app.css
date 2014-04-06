@@ -1,0 +1,17 @@
+body {
+    /* this turns off scrolling, ensuring the scroll bars don't ever show */
+    overflow: hidden;
+}
+
+.present-row {
+    padding-top:50px;
+}
+
+.present-block {
+    text-align:center;
+    font-size:2em;
+    line-height: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
