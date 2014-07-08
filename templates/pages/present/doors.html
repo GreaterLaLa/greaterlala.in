@@ -1,0 +1,159 @@
+{% extends 'layouts/base_present.html' %}
+
+{% from "macros/helpers.html" import present_block %}
+
+{% block body_content %}
+<div id="door-area">
+    <div id="gif-area"></div>
+    {% for idx in range(0, 3) %}
+        {% if suggestions[idx] %}
+            {{ present_block(suggestions[idx], idx) }}
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block footer_extra %}
+<script>
+    $(document).ready(function() {
+
+        var delay = 500; // ms
+        var duration = 500; // ms
+        var display_duration = 10000; // ms
+
+        var block_count = 4;
+
+        var colors = [
+            '#BE7A1F',
+            '#575F22',
+            '#425851',
+            '#0F1E3A'
+        ];
+
+        var iterations = 0;
+        var gif_or_words = function() {
+            if (3 % iterations === 0){
+                show_gif();
+            } else {
+                load_new_set();
+            }
+            iterations++;
+        };
+
+        var show_gif = function() {
+
+            $("#words-area").hide();
+
+            $gifarea = $("#gif-area");
+            $gifarea.show();
+            // starting CSS pre-animation
+            $gifarea.css({
+                'display': 'block',
+                'opacity': 0,
+                'background-image': 'url(' + '/img/gifs/test1.gif' + ')',
+            });
+            // transition in
+            $gifarea.transition({
+                    'y': 0,
+                    'opacity': 1,
+                    'duration': duration
+                });
+            // change opacity
+            $gifarea.transition({
+                    'delay': delay,
+                    'duration': (display_duration * 2)
+                });
+            // transition out
+            $gifarea.transition({
+                    'opacity': 0,
+                    'delay': delay,
+                    'duration': duration,
+                });
+            $gifarea.promise().done(function() {
+                $gifarea.css({
+                    'background-image': 'none',
+                });
+                gif_or_words();
+            });
+        };
+
+        var load_new_set = function() {
+            var xhr = $.ajax({
+                'url': '/api/suggestions',
+                'dataType': 'json',
+                'type': 'GET',
+                'data': {
+                    'limit': block_count,
+                    'random': 1
+                }
+            });
+            // always execute this when it finishes
+            xhr.always(function(data, status, xhr) {
+                if (data) { // do some guarding to make sure this is valid data
+                    for (var i = 0; i < block_count; i++) {
+                        if (data[i] && data[i].content) {
+                            // update the DOM elements with new content
+                            $('#row' + i + " .sugg-content").text(data[i].content);
+                        }
+                    }
+                }
+                // run the animations again on the blocks
+                run_animations();
+            });
+        };
+
+        var run_animations = function() {
+
+            $("#gif-area").hide();
+            $("#words-area").show();
+
+            for (var i = 0; i < block_count; i++) {
+
+                var start = i * 1000; // delay subsequent starts by 1 sec
+
+                var $pb = $('#row' + i);
+                var bgcolor = colors[i];
+
+                // starting CSS pre-animation
+                $pb.css({
+                    'y': '-100',
+                    'opacity': 0,
+                    'background-color': bgcolor,
+                });
+                // transition in
+                $pb.transition({
+                        'y': 0,
+                        'opacity': 1,
+                        'delay': start,
+                        'duration': duration
+                    });
+                // change opacity
+                $pb.transition({
+                        'opacity': 0.75,
+                        'delay': delay,
+                        'duration': display_duration
+                    });
+                // transition out
+                $pb.transition({
+                        'y': '100',
+                        'opacity': 0,
+                        'delay': delay,
+                        'duration': duration,
+                    });
+
+                // attach a promise.done() only if this is the last of the
+                // blocks to be animated
+                if (i >= block_count - 1) {
+                    $pb.promise().done(function() {
+                        gif_or_words();
+                    });
+                }
+            };
+
+        };
+
+        // kick it off with stuff already in DOM on load
+        run_animations();
+    });
+</script>
+{% endblock %}

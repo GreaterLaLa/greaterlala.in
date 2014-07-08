@@ -1,7 +1,7 @@
 {% macro present_block(sugg, index) %}
-<div class="row present-row" id="present-row-{{index}}">
-    <div class="small-12 columns">
-        <div class="present-block" id="present-block-{{index}}">{{sugg.content}}</div>
-    </div>
+<div id="row{{index}}" class="row">
+    <div id="left{{index}}" class="windowpane smallwindow_left">&nbsp;></div>
+    <div id="center{{index}}" class="windowpane centerwindow"><br />&nbsp;&nbsp;&nbsp;&nbsp;"<span class="sugg-content">{{sugg.content}}</span>"</div>
+    <div id="right{{index}}" class="windowpane smallwindow_right"><br />&nbsp;&nbsp;&nbsp;4/11<br />&nbsp;&nbsp;&nbsp;6:12 pm</div>
 </div>
 {% endmacro %}
