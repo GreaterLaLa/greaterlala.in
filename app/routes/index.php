@@ -9,11 +9,10 @@ $app->error(function (\Exception $e) use ($app) {
 $app->get('/', function () use ($app) {
     $sugg = ParisModel::factory('\GLLApp\Model\Suggestion');
     $suggestions = $sugg
-                        ->limit(10)
-                        ->order_by_desc('created_at')
+                        ->limit(4)
+                        ->order_by_expr('RAND() DESC')
                         ->find_many();
     // the first shall be last
     $suggestions = array_reverse($suggestions);
     $app->render('pages/index.html', ['suggestions' => $suggestions]);
 });
-
