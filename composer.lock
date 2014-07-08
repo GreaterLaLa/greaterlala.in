@@ -1,22 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "ac3effe824119cc963061fca99ac5a7e",
+    "hash": "20aeedde327c2b7dce1d644765b64569",
     "packages": [
         {
             "name": "j4mie/idiorm",
-            "version": "v1.4.1",
+            "version": "v1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/j4mie/idiorm.git",
-                "reference": "11e964157a6a2c6128a0546673ad5e99ac1a62cd"
+                "reference": "b0922d8719a94e3a0e0e4a0ca3876f4f91475dcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/j4mie/idiorm/zipball/11e964157a6a2c6128a0546673ad5e99ac1a62cd",
-                "reference": "11e964157a6a2c6128a0546673ad5e99ac1a62cd",
+                "url": "https://api.github.com/repos/j4mie/idiorm/zipball/b0922d8719a94e3a0e0e4a0ca3876f4f91475dcf",
+                "reference": "b0922d8719a94e3a0e0e4a0ca3876f4f91475dcf",
                 "shasum": ""
             },
             "require": {
@@ -61,24 +62,24 @@
                 "orm",
                 "query builder"
             ],
-            "time": "2013-12-12 10:25:27"
+            "time": "2014-06-23 13:08:57"
         },
         {
             "name": "j4mie/paris",
-            "version": "v1.4.2",
+            "version": "v1.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/j4mie/paris.git",
-                "reference": "dd1a87544127874dce367f0252dcc81246dfc83b"
+                "reference": "8d94afe0b39e29f2a84bf9ce7e06088d5b93bb5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/j4mie/paris/zipball/dd1a87544127874dce367f0252dcc81246dfc83b",
-                "reference": "dd1a87544127874dce367f0252dcc81246dfc83b",
+                "url": "https://api.github.com/repos/j4mie/paris/zipball/8d94afe0b39e29f2a84bf9ce7e06088d5b93bb5b",
+                "reference": "8d94afe0b39e29f2a84bf9ce7e06088d5b93bb5b",
                 "shasum": ""
             },
             "require": {
-                "j4mie/idiorm": "1.4.*",
+                "j4mie/idiorm": "1.5.*",
                 "php": ">=5.2.0"
             },
             "type": "library",
@@ -121,7 +122,7 @@
                 "orm",
                 "paris"
             ],
-            "time": "2013-12-12 10:47:44"
+            "time": "2014-06-25 10:01:46"
         },
         {
             "name": "monolog/monolog",
@@ -334,16 +335,16 @@
         },
         {
             "name": "slim/slim",
-            "version": "2.4.2",
+            "version": "2.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeguy/Slim.git",
-                "reference": "3a2ac723f17b5d81607287ff28575d38b9fbc70e"
+                "reference": "4906b77a07c7bd6ff1a99aea903e940a2d4fa106"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeguy/Slim/zipball/3a2ac723f17b5d81607287ff28575d38b9fbc70e",
-                "reference": "3a2ac723f17b5d81607287ff28575d38b9fbc70e",
+                "url": "https://api.github.com/repos/codeguy/Slim/zipball/4906b77a07c7bd6ff1a99aea903e940a2d4fa106",
+                "reference": "4906b77a07c7bd6ff1a99aea903e940a2d4fa106",
                 "shasum": ""
             },
             "require": {
@@ -376,21 +377,21 @@
                 "rest",
                 "router"
             ],
-            "time": "2014-02-16 18:18:25"
+            "time": "2014-04-05 18:33:59"
         },
         {
             "name": "slim/views",
-            "version": "0.1.1",
+            "version": "0.1.2",
             "target-dir": "Slim/Views",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeguy/Slim-Views.git",
-                "reference": "8c7e0f3067e5e10b7b4ca98f29bdef8d5cfe5371"
+                "reference": "f0a05ea0b654218e40de692ed7cddcad1cf4b828"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeguy/Slim-Views/zipball/8c7e0f3067e5e10b7b4ca98f29bdef8d5cfe5371",
-                "reference": "8c7e0f3067e5e10b7b4ca98f29bdef8d5cfe5371",
+                "url": "https://api.github.com/repos/codeguy/Slim-Views/zipball/f0a05ea0b654218e40de692ed7cddcad1cf4b828",
+                "reference": "f0a05ea0b654218e40de692ed7cddcad1cf4b828",
                 "shasum": ""
             },
             "require": {
@@ -430,21 +431,21 @@
                 "slimphp",
                 "templating"
             ],
-            "time": "2013-12-08 10:18:35"
+            "time": "2014-04-03 16:31:10"
         },
         {
             "name": "symfony/class-loader",
-            "version": "v2.4.2",
+            "version": "v2.5.0",
             "target-dir": "Symfony/Component/ClassLoader",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ClassLoader.git",
-                "reference": "d36352a610b33da398349807d63b8a792310ba7e"
+                "reference": "09e38e4d228c1f7f997f3dc7068d9d2fba9a10b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ClassLoader/zipball/d36352a610b33da398349807d63b8a792310ba7e",
-                "reference": "d36352a610b33da398349807d63b8a792310ba7e",
+                "url": "https://api.github.com/repos/symfony/ClassLoader/zipball/09e38e4d228c1f7f997f3dc7068d9d2fba9a10b0",
+                "reference": "09e38e4d228c1f7f997f3dc7068d9d2fba9a10b0",
                 "shasum": ""
             },
             "require": {
@@ -456,7 +457,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -482,21 +483,21 @@
             ],
             "description": "Symfony ClassLoader Component",
             "homepage": "http://symfony.com",
-            "time": "2014-02-11 13:52:09"
+            "time": "2014-04-16 10:36:34"
         },
         {
             "name": "symfony/config",
-            "version": "v2.4.2",
+            "version": "v2.5.0",
             "target-dir": "Symfony/Component/Config",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Config.git",
-                "reference": "d81bd01eac1514c10dcb3b11eaa9048d6b87dd1f"
+                "reference": "9c8caadb38ecc69ac35ab31af4d1996944b5a09f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Config/zipball/d81bd01eac1514c10dcb3b11eaa9048d6b87dd1f",
-                "reference": "d81bd01eac1514c10dcb3b11eaa9048d6b87dd1f",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/9c8caadb38ecc69ac35ab31af4d1996944b5a09f",
+                "reference": "9c8caadb38ecc69ac35ab31af4d1996944b5a09f",
                 "shasum": ""
             },
             "require": {
@@ -506,7 +507,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -532,36 +533,38 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "http://symfony.com",
-            "time": "2014-01-07 13:28:54"
+            "time": "2014-04-22 08:11:23"
         },
         {
             "name": "symfony/console",
-            "version": "v2.4.2",
+            "version": "v2.5.0",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "940f217cbc3c8a33e5403e7c595495c4884400fe"
+                "reference": "ef4ca73b0b3a10cbac653d3ca482d0cdd4502b2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/940f217cbc3c8a33e5403e7c595495c4884400fe",
-                "reference": "940f217cbc3c8a33e5403e7c595495c4884400fe",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/ef4ca73b0b3a10cbac653d3ca482d0cdd4502b2c",
+                "reference": "ef4ca73b0b3a10cbac653d3ca482d0cdd4502b2c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
+                "psr/log": "~1.0",
                 "symfony/event-dispatcher": "~2.1"
             },
             "suggest": {
+                "psr/log": "For using the console logger",
                 "symfony/event-dispatcher": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -587,21 +590,21 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-02-11 13:52:09"
+            "time": "2014-05-22 08:54:24"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.4.2",
+            "version": "v2.5.0",
             "target-dir": "Symfony/Component/Filesystem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "7e65abb06d3b38f4be89266fe3fb4a759544e713"
+                "reference": "98e831eac836a0a5911626ce82684155f21d0e4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/7e65abb06d3b38f4be89266fe3fb4a759544e713",
-                "reference": "7e65abb06d3b38f4be89266fe3fb4a759544e713",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/98e831eac836a0a5911626ce82684155f21d0e4d",
+                "reference": "98e831eac836a0a5911626ce82684155f21d0e4d",
                 "shasum": ""
             },
             "require": {
@@ -610,7 +613,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -636,21 +639,21 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2014-01-07 13:28:54"
+            "time": "2014-04-16 10:36:21"
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.4.2",
+            "version": "v2.5.0",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "bb6ddaf8956139d1b8c360b4b713ed0138e876b3"
+                "reference": "b4b09c68ec2f2727574544ef0173684281a5033c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/bb6ddaf8956139d1b8c360b4b713ed0138e876b3",
-                "reference": "bb6ddaf8956139d1b8c360b4b713ed0138e876b3",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/b4b09c68ec2f2727574544ef0173684281a5033c",
+                "reference": "b4b09c68ec2f2727574544ef0173684281a5033c",
                 "shasum": ""
             },
             "require": {
@@ -659,7 +662,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -685,7 +688,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2014-01-07 13:28:54"
+            "time": "2014-05-16 14:25:18"
         },
         {
             "name": "twig/twig",
@@ -749,7 +752,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/valitron/zipball/bad274391288563d427ede0a6c658388ded09480",
+                "url": "https://api.github.com/repos/vlucas/valitron/zipball/1e55a1bf568fe73451b0ce3af8f5f769c91b4c06",
                 "reference": "e011ab81c43903e73b766620828877b828e65380",
                 "shasum": ""
             },
@@ -770,7 +773,8 @@
                 {
                     "name": "Vance Lucas",
                     "email": "vance@vancelucas.com",
-                    "homepage": "http://www.vancelucas.com"
+                    "homepage": "http://www.vancelucas.com",
+                    "role": "Developer"
                 }
             ],
             "description": "Simple, elegant, stand-alone validation library with NO dependencies",
@@ -790,12 +794,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/funkatron/FUnit.git",
-                "reference": "754a7da50d31dac04a065e49be44c4de0a1d75b5"
+                "reference": "50ce0a9d4562a6d3413b3932ee89072ff5a20612"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/funkatron/FUnit/zipball/754a7da50d31dac04a065e49be44c4de0a1d75b5",
-                "reference": "754a7da50d31dac04a065e49be44c4de0a1d75b5",
+                "url": "https://api.github.com/repos/funkatron/FUnit/zipball/50ce0a9d4562a6d3413b3932ee89072ff5a20612",
+                "reference": "50ce0a9d4562a6d3413b3932ee89072ff5a20612",
                 "shasum": ""
             },
             "require": {
@@ -819,6 +823,7 @@
             "authors": [
                 {
                     "name": "Ed Finkler",
+                    "email": "coj@funkatron.com",
                     "homepage": "http://funkatron.com"
                 }
             ],
@@ -832,7 +837,7 @@
                 "testing",
                 "unit"
             ],
-            "time": "2014-03-14 21:15:00"
+            "time": "2014-03-31 20:19:27"
         },
         {
             "name": "fzaninotto/faker",
@@ -928,16 +933,16 @@
         },
         {
             "name": "nategood/commando",
-            "version": "0.2.5",
+            "version": "0.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nategood/commando.git",
-                "reference": "2b904d48b2296a099c2fd9fc2212eff9cfc0a7c5"
+                "reference": "d6c76c3478a5b90b4f1c79c7b3ca0dfe43ef77d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nategood/commando/zipball/2b904d48b2296a099c2fd9fc2212eff9cfc0a7c5",
-                "reference": "2b904d48b2296a099c2fd9fc2212eff9cfc0a7c5",
+                "url": "https://api.github.com/repos/nategood/commando/zipball/d6c76c3478a5b90b4f1c79c7b3ca0dfe43ef77d6",
+                "reference": "d6c76c3478a5b90b4f1c79c7b3ca0dfe43ef77d6",
                 "shasum": ""
             },
             "require": {
@@ -971,7 +976,7 @@
                 "command line interface",
                 "scripting"
             ],
-            "time": "2014-02-02 20:46:29"
+            "time": "2014-05-14 01:19:26"
         }
     ],
     "aliases": [

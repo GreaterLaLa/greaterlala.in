@@ -6,8 +6,8 @@
         "monolog/monolog": "1.7.0",
         "resty/resty": "0.6.0",
         "vlucas/valitron": "dev-master#e011ab81c43903e73b766620828877b828e65380",
-        "j4mie/idiorm": "v1.4.1",
-        "j4mie/paris": "v1.4.2",
+        "j4mie/idiorm": "1.5.1",
+        "j4mie/paris": "1.5.3",
         "robmorgan/phinx": "v0.3.3"
     },
 
