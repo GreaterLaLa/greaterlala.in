@@ -11,8 +11,7 @@ $app->group('/present', function () use ($app) {
                             ->find_many();
         // the first shall be last
         $suggestions = array_reverse($suggestions);
-        $app->render('pages/present/index.html', ['suggestions' => $suggestions]);
+        $app->render('pages/present/doors.html', ['suggestions' => $suggestions]);
     });
 
 });
-
