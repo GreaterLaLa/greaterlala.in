@@ -17,31 +17,55 @@
 <script>
     $(document).ready(function() {
 
-        var delay = 500; // ms
-        var duration = 500; // ms
-        var display_duration = 10000; // ms
-
         var block_count = 4;
 
         var colors = [
-            '#BE7A1F',
-            '#575F22',
-            '#425851',
-            '#0F1E3A'
+            "#CA8C33",
+            "#A5B744",
+            "#ABCB9F",
+            "#5AB8BF",
+
+            "#7A5618",
+            "#6A7031",
+            "#7D9A91",
+            "#5B6C89",
+
+            "#AF2F27",
+            "#63634A",
+            "#546A64",
+            "#2F4E7A",
+
+            "#77190E",
+            "#2B2E1B",
+            "#394C47",
+            "#132A4A"
         ];
 
-        var iterations = 0;
+        var block_iterations = 1;
+
+        var delay = 500; // ms
+        var duration = 500; // ms
+        var display_duration = 3000; // ms
+
+        var get_4_colors = function() {
+            var rand_colors = []
+            for (var i = 0; i < 4; i++) {
+                var idx = Math.floor(Math.random() * colors.length);
+                rand_colors.push(colors[idx]);
+            };
+            return rand_colors;
+        }
+
         var gif_or_words = function() {
-            if (3 % iterations === 0){
+            if ((block_iterations % 3) === 0){
                 show_gif();
             } else {
                 load_new_set();
             }
-            iterations++;
+            block_iterations++;
         };
 
         var show_gif = function() {
-
             $("#words-area").hide();
 
             $gifarea = $("#gif-area");
@@ -90,70 +114,107 @@
             // always execute this when it finishes
             xhr.always(function(data, status, xhr) {
                 if (data) { // do some guarding to make sure this is valid data
-                    for (var i = 0; i < block_count; i++) {
-                        if (data[i] && data[i].content) {
-                            // update the DOM elements with new content
-                            $('#row' + i + " .sugg-content").text(data[i].content);
-                        }
-                    }
+                    insert_new_block_data(data);
+                } else {
+                    gif_or_words();
                 }
-                // run the animations again on the blocks
-                run_animations();
             });
         };
 
-        var run_animations = function() {
+        var get_blocks = function() {
+            var $rows = $("div.row");
+            var blocks = [];
+            $rows.each(function(i) {
+                blocks.push($($rows[i]));
+            })
+            return blocks;
+        }
+
+
+        /**
+         * this makes a lot of assumptions about what elements are
+         * on the page -- many hard-coded values
+         * @param  {object} data_arr hash of data from the server
+         */
+        var insert_new_block_data = function(data_arr) {
+            var blocks = get_blocks();
 
             $("#gif-area").hide();
-            $("#words-area").show();
 
-            for (var i = 0; i < block_count; i++) {
+            var i = 0;
 
-                var start = i * 1000; // delay subsequent starts by 1 sec
+            // get blocks
+            var $block0 = $('#row0');
+            var $block1 = $('#row1');
+            var $block2 = $('#row2');
+            var $block3 = $('#row3');
 
-                var $pb = $('#row' + i);
-                var bgcolor = colors[i];
+            var colors = get_4_colors();
 
-                // starting CSS pre-animation
-                $pb.css({
-                    'y': '-100',
-                    'opacity': 0,
-                    'background-color': bgcolor,
+            $("#door-area")
+                .queue(function () {
+                    var self = this;
+                    var p = insert_and_animate($block0, data_arr[0].content, colors[0], 0);
+                    p.done(function() {
+                        $(self).dequeue();
+                    });
+                })
+                .queue(function () {
+                    var self = this;
+                    var p = insert_and_animate($block1, data_arr[1].content, colors[1], 0);
+                    p.done(function() {
+                        $(self).dequeue();
+                    });
+                })
+                .queue(function () {
+                    var self = this;
+                    var p = insert_and_animate($block2, data_arr[2].content, colors[2], 0);
+                    p.done(function() {
+                        $(self).dequeue();
+                    });
+                })
+                .queue(function () {
+                    var self = this;
+                    var p = insert_and_animate($block3, data_arr[3].content, colors[3], 0);
+                    p.done(function() {
+                        $(self).dequeue();
+                    });
+                })
+                .queue(function() {
+                    gif_or_words();
+                    $(this).dequeue();
                 });
-                // transition in
-                $pb.transition({
-                        'y': 0,
-                        'opacity': 1,
-                        'delay': start,
-                        'duration': duration
-                    });
-                // change opacity
-                $pb.transition({
-                        'opacity': 0.75,
-                        'delay': delay,
-                        'duration': display_duration
-                    });
-                // transition out
-                $pb.transition({
-                        'y': '100',
-                        'opacity': 0,
-                        'delay': delay,
-                        'duration': duration,
-                    });
+        };
 
-                // attach a promise.done() only if this is the last of the
-                // blocks to be animated
-                if (i >= block_count - 1) {
-                    $pb.promise().done(function() {
-                        gif_or_words();
-                    });
-                }
-            };
 
+        var insert_and_animate = function($block, content, bgcolor, delay) {
+
+            $block.show();
+            $block.find(".sugg-content").text(content)
+            // starting CSS pre-animation
+            $block.css({
+                'y': '-100',
+                'opacity': 0,
+                'background-color': bgcolor,
+            });
+            // transition in
+            $block.transition({
+                    'y': 0,
+                    'opacity': 0.75,
+                    'delay': delay,
+                    'duration': duration
+                });
+            // change opacity
+            $block.transition({
+                    'opacity': 1,
+                    'duration': display_duration
+                });
+
+            return $block.promise();
         };
 
         // kick it off with stuff already in DOM on load
-        run_animations();
+        gif_or_words();
     });
 </script>
 {% endblock %}
