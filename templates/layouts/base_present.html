@@ -7,12 +7,11 @@
         <!-- Door dimensions are approx. 94"Wx81"H, for an aspect of approx. 1.16. -->
         <!-- Display is 1024x768, so 4:3, or 1.33 aspect, so the image projected will be wider than the door. -->
 
-        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
 
         <style>
 
-            /* font - need to get actual font Jason wanted from here http://www.typography.com/fonts/gotham/styles/gotham1 */
-            body { margin: 0px; background-color: #FFF; font-family: 'Gotham', Gotham, 'Source Sans Pro', Verdana, Arial, sans-serif;}
+            body { margin: 0px; background-color: #FFF; font-family: 'Montserrat', sans-serif;}
 
             /* Set the native resolution of the projector, 1024x768. */
             #projected-area { width: 1024px; height:768px; background-color: #FFF; margin: auto; padding: 0px; }
@@ -36,9 +35,9 @@
             .windowpane { overflow: hidden; border-style: solid; border-width: 1px; border-color: #FFF; display: block; }
 
             /* Classes for each window type: small left, small right, and the larger center window in each row. Overflow hidden to keep things from breaking if you color outside the lines. A 1px black border to make aligning projected image and door frame easier */
-            .smallwindow_left { width: 200px; height: inherit; float: left; font-size:150px; color:white; }
+            .smallwindow_left { width: 200px; height: inherit; float: left; font-size:150px; font-weight:bold; color:white; }
             .smallwindow_right { width: 200px; height: inherit; float: right; font-size:30px; color:white; }
-            .centerwindow { width: 486px; height: inherit; float: left; font-size:40px; color:white;}
+            .centerwindow { width: 486px; height: inherit; float: left; font-size:40px; font-weight:bold; color:white;}
             /*center window width 486 */
 
 
