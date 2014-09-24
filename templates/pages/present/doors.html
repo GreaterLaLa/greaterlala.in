@@ -42,6 +42,8 @@
         ];
 
         var block_iterations = 1;
+	var animated_gifs = new Array('Video-01-bw-optimized.gif', 'Video-02-bw-optimized.gif', 'Video-03-bw-optimized.gif', 'Video-04-bw-optimized.gif', 'Video-05-bw-optimized.gif');
+
 
         var delay = 500; // ms
         var duration = 500; // ms
@@ -68,13 +70,17 @@
         var show_gif = function() {
             $("#words-area").hide();
 
+
+		
+	    var gif_id = Math.floor(Math.random() * animated_gifs.length);
+
             $gifarea = $("#gif-area");
             $gifarea.show();
             // starting CSS pre-animation
             $gifarea.css({
                 'display': 'block',
                 'opacity': 0,
-                'background-image': 'url(' + '/img/gifs/test1.gif' + ')',
+                'background-image': 'url(' + '/img/gifs/' + animated_gifs[gif_id] + ')',
             });
             // transition in
             $gifarea.transition({
